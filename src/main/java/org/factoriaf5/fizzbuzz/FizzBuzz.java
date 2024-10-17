@@ -2,7 +2,7 @@ package org.factoriaf5.fizzbuzz;
 
 public class FizzBuzz {
 
-public String devolverNumero(int i){
+public String devolverFizzBuzzNum(int i){
 
         String resultado = "";
 

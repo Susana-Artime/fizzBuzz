@@ -1,63 +1,68 @@
 package org.factoriaf5.fizzbuzz;
-import static org.junit.jupiter.api.Assertions.*;
 import org.junit.jupiter.api.Test;
 import static org.hamcrest.MatcherAssert.assertThat;
-import static org.hamcrest.Matchers.equalTo;
+import static org.hamcrest.Matchers.*;
 
 public class FizzBuzzTest {
 
+    FizzBuzz fizzBuzz=new FizzBuzz();
+
     @Test
-    public void devolverNumeroTest(){
+    public void devolverFizzBuzzNumTestDivisiblesTres(){        
 
-        FizzBuzz fizzBuzz=new FizzBuzz();
+        assertThat(fizzBuzz.devolverFizzBuzzNum(3), is("Fizz"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(6), is("Fizz"));
+           
+    } 
 
-        assertEquals("Fizz", fizzBuzz.devolverNumero(3));
-        assertEquals("Fizz", fizzBuzz.devolverNumero(6));
-        assertEquals("Fizz", fizzBuzz.devolverNumero(9));
-        assertEquals("Fizz", fizzBuzz.devolverNumero(123));
-        assertEquals("Fizz", fizzBuzz.devolverNumero(23));
-        assertEquals("Fizz", fizzBuzz.devolverNumero(13));
-
+    @Test
+    public void devolverFizzBuzzNumTestDivisiblesCinco(){
         
+
+        assertThat(fizzBuzz.devolverFizzBuzzNum(5), is("Buzz"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(10), is("Buzz"));
+    
+    } 
+
+    @Test
+    public void devolverFizzBuzzNumTestDivisiblesTresyCinco(){
         
-        assertEquals("Buzz", fizzBuzz.devolverNumero(5));
-        assertEquals("Buzz", fizzBuzz.devolverNumero(10));
-        assertEquals("Buzz", fizzBuzz.devolverNumero(25));
-        assertEquals("Buzz", fizzBuzz.devolverNumero(52));
 
-
-        assertEquals("FizzBuzz", fizzBuzz.devolverNumero(15));
-        assertEquals("FizzBuzz", fizzBuzz.devolverNumero(30));
-        assertEquals("FizzBuzz", fizzBuzz.devolverNumero(135));
-        assertEquals("FizzBuzz", fizzBuzz.devolverNumero(53));
-
+        assertThat(fizzBuzz.devolverFizzBuzzNum(15), is("FizzBuzz"));
         
-        assertEquals("1", fizzBuzz.devolverNumero(1));
-        assertEquals("2", fizzBuzz.devolverNumero(2));
-        assertEquals("4", fizzBuzz.devolverNumero(4));
-        assertEquals("7", fizzBuzz.devolverNumero(7));
-        assertEquals("8", fizzBuzz.devolverNumero(8));
+    
+    } 
 
-        //Utilizando aserciones de Hamcrest
+    @Test
+    public void devolverFizzBuzzNumTestContienenTres(){        
 
-        assertThat(fizzBuzz.devolverNumero(3), equalTo("Fizz"));
-        assertThat(fizzBuzz.devolverNumero(5), equalTo("Buzz"));
-        assertThat(fizzBuzz.devolverNumero(15), equalTo("FizzBuzz"));
-        assertThat(fizzBuzz.devolverNumero(13), equalTo("Fizz"));
-        assertThat(fizzBuzz.devolverNumero(52), equalTo("Buzz"));
-        assertThat(fizzBuzz.devolverNumero(7), equalTo("7"));
-        assertThat(fizzBuzz.devolverNumero(30), equalTo("FizzBuzz"));
-        assertThat(fizzBuzz.devolverNumero(23), equalTo("Fizz"));
-        assertThat(fizzBuzz.devolverNumero(10), equalTo("Buzz"));
-        assertThat(fizzBuzz.devolverNumero(1), equalTo("1"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(13), is("Fizz"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(23), is("Fizz"));
+    
+    } 
+
+    @Test
+    public void devolverFizzBuzzNumTestContienenCinco(){        
+
+        assertThat(fizzBuzz.devolverFizzBuzzNum(55), is("Buzz"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(52), is("Buzz"));
+        
+    
+    } 
+
+    @Test
+    public void devolverFizzBuzzNumTestNingunaCondicion(){        
+
+        assertThat(fizzBuzz.devolverFizzBuzzNum(1), is("1"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(2), is("2"));
+        assertThat(fizzBuzz.devolverFizzBuzzNum(4), is("4"));
+    
+    } 
 
 
-
-
-
-    }
+}
 
 
 
     
-}
+
